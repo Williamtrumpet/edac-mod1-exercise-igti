@@ -1,12 +1,12 @@
-name: Deploy
+name: Test on PR
 
 on: 
-  push:
+  pull_request:
     braches: [master]
 
 jos: 
-  deploy:
-    name: Deploy to Datalake
+  teste:
+    name: Teste infra on PR
     runs-on: ubuntu-latest
 
     stepes:
@@ -35,4 +35,3 @@ jos:
         $COMMAND_IAC init
         $COMMAND_IAC validate
         $COMMAND_IAC plan
-        $COMMAND_IAC apply -auto-approve
